@@ -1,5 +1,13 @@
 server:
-  port: 8080
+  port: 8088
 spring:
   application:
     name: rag-servicenow-chat
+  ai:
+    google:
+      genai:
+        api-key: ${GEMINI_KEY}           # your API key
+        chat:
+          options:
+            model: models/gemini-2.0-flash
+            temperature: 0.5

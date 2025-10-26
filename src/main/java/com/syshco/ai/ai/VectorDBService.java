@@ -19,7 +19,7 @@ public class VectorDBService {
     private final PythonEmbeddingService pythonEmbeddingService;
     private final List<SoftwareCatalogItem> softwareCatalogItems = new CopyOnWriteArrayList<>();
 
-    @PostConstruct
+   // @PostConstruct
     public List<SoftwareCatalogItem> insert() {
         List<SoftwareCatalogItem> items = serviceNowClient.fetchSoftwareCatalog();
         for (SoftwareCatalogItem item : items) {

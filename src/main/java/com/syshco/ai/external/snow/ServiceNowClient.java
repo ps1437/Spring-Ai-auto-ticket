@@ -35,10 +35,10 @@ public class ServiceNowClient {
     }
 
 
-    public SoftwareTicket createTicket(String softwareName, String requestedBy) {
-        int rand = new Random().nextInt(9000) + 1000;
-        String ticketNumber = "RTM-" + rand;
-        return new SoftwareTicket(ticketNumber, softwareName, requestedBy, "Created");
-    }
+        public SoftwareTicket createTicket(String softwareName, String requestedBy) {
+            int rand = new Random().nextInt(9000) + 1000;
+            String ticketNumber = "RTM-" + rand;
+            return new SoftwareTicket(ticketNumber, softwareName, requestedBy, "Created");
+        }
 
 }
