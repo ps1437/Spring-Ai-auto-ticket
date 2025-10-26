@@ -1,0 +1,20 @@
+package com.syshco.ai.config;
+
+import org.springframework.ai.chat.client.ChatClient;
+import org.springframework.ai.chat.client.advisor.SimpleLoggerAdvisor;
+import org.springframework.ai.chat.memory.ChatMemory;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+public class ChatConfig {
+
+    @Bean("chatClient")
+    public ChatClient chatClient(ChatClient.Builder builder, ChatMemory chatMemory) {
+        return builder
+                // 1. SimpleLoggerAdvisor: logs messages for debugging
+                .defaultAdvisors(new SimpleLoggerAdvisor())
+                .build();
+    }
+
+}
