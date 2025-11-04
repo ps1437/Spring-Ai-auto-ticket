@@ -6,7 +6,6 @@ plugins {
 
 group = 'com.syshco.ai'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '21'
 java {
 	toolchain {
 		languageVersion = JavaLanguageVersion.of(21)
@@ -19,7 +18,15 @@ repositories {
 
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.ai:spring-ai-starter-model-openai:1.1.0-M3'
 	implementation 'org.projectlombok:lombok:1.18.30'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	runtimeOnly 'com.h2database:h2'
+
+//	implementation 'org.springframework.ai:spring-ai-rag:1.1.0-M3'
+//	implementation 'org.springframework.ai:spring-ai-advisors-vector-store:1.1.0-M3'
+//	implementation 'org.springframework.ai:spring-ai-starter-vector-store-qdrant:1.1.0-M3'
+//	implementation 'org.springframework.ai:spring-ai-tika-document-reader:1.1.0-M3'
 	annotationProcessor 'org.projectlombok:lombok:1.18.30'
 	implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.1.0'
 }

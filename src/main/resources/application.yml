@@ -1,5 +1,46 @@
 server:
-  port: 8080
+  port: 8088
+
 spring:
   application:
-    name: rag-servicenow-chat
+    name: spring-ai-insights
+  datasource:
+    url: jdbc:h2:mem:syschodb
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+  jpa:
+    hibernate:
+      ddl-auto: create
+    show-sql: true
+    defer-datasource-initialization: true
+
+  # Optional: Spring AI setup (if using AI tools)
+  # spring:
+  #   ai:
+  #     openai:
+  #       api-key: YOUR_OPENAI_API_KEY
+  #       chat:
+  #         model: gpt-4o-mini
+
+  ai:
+    openai:
+   ai:
+#    google:
+#      genai:
+#        api-key:           # your API key
+#        chat:
+#          options:
+#            model: models/gemini-2.0-flash
+#            temperature: 0.5
+
+#    vectorstore:
+#      qdrant:
+#        initialize-schema: true
+#        host: localhost
+#        port: 6334
+#        collection-name: syscho_sage
