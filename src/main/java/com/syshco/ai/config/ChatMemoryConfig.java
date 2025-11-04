@@ -1,6 +1,5 @@
 package com.syshco.ai.config;
 
-import org.jetbrains.annotations.NotNull;
 import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.ai.chat.client.advisor.MessageChatMemoryAdvisor;
 import org.springframework.ai.chat.client.advisor.SimpleLoggerAdvisor;
@@ -50,11 +49,9 @@ public class ChatMemoryConfig {
      * @param chatMemory ChatMemory bean to store conversation
      * @return configured MessageChatMemoryAdvisor
      */
-    @NotNull
     private static MessageChatMemoryAdvisor messageChatMemoryAdvisor(ChatMemory chatMemory) {
         return MessageChatMemoryAdvisor.builder(chatMemory)
                 .scheduler(Schedulers.boundedElastic()) // run memory updates on separate thread
-                .conversationId("username") // fixed conversation ID (can be dynamic per user)
                 .build();
     }
 
