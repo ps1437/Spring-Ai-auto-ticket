@@ -14,6 +14,7 @@ public class ChatConfig {
         return builder
                 // 1. SimpleLoggerAdvisor: logs messages for debugging
                 .defaultAdvisors(new SimpleLoggerAdvisor())
+
                 .build();
     }
 
